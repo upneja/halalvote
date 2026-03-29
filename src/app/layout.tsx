@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { Nav } from "@/components/nav";
 import "./globals.css";
 
+export const dynamic = "force-dynamic";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
