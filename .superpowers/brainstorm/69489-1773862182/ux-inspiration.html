@@ -1,0 +1,197 @@
+<h2>UX Inspiration for HalalVote</h2>
+<p class="subtitle">10 creative patterns to avoid generic AI aesthetics</p>
+
+<div class="section">
+  <h3>1. Radial/Donut Vote Visualization</h3>
+  <div class="mockup">
+    <div class="mockup-header">Instead of a progress bar</div>
+    <div class="mockup-body" style="text-align:center; padding:30px;">
+      <div style="position:relative; width:140px; height:140px; margin:0 auto;">
+        <svg viewBox="0 0 36 36" style="transform:rotate(-90deg);">
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#333" stroke-width="3"/>
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#4ade80" stroke-width="3"
+            stroke-dasharray="62 38" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f87171" stroke-width="3"
+            stroke-dasharray="0 62 38 0" stroke-linecap="round"/>
+        </svg>
+        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:18px; font-weight:bold;">62%</div>
+      </div>
+      <p style="margin-top:12px; font-size:13px; opacity:0.7;">Donut chart feels more dynamic than a flat bar. Center shows majority %.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. Swipe-to-Vote (Tinder-style)</h3>
+  <div class="mockup">
+    <div class="mockup-header">Mobile-first interaction</div>
+    <div class="mockup-body" style="padding:24px;">
+      <div style="background:#1a1a2e; border-radius:16px; padding:24px; text-align:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; left:0; top:0; bottom:0; width:40px; display:flex; align-items:center; justify-content:center; background:linear-gradient(90deg, rgba(74,222,128,0.2), transparent); font-size:20px;">←</div>
+        <div style="position:absolute; right:0; top:0; bottom:0; width:40px; display:flex; align-items:center; justify-content:center; background:linear-gradient(-90deg, rgba(248,113,113,0.2), transparent); font-size:20px;">→</div>
+        <h4 style="margin:0 0 8px 0;">Is Crypto Day Trading Halal?</h4>
+        <p style="opacity:0.5; font-size:12px;">Swipe left = Halal · Swipe right = Haram</p>
+      </div>
+      <p style="font-size:13px; opacity:0.7; margin-top:12px;">Cards stack. Swipe through topics quickly. Gamified, addictive UX. See results after swipe.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>3. Split-Screen Reveal</h3>
+  <div class="mockup">
+    <div class="mockup-header">Results as a dramatic reveal</div>
+    <div class="mockup-body" style="padding:0; overflow:hidden; display:flex; height:120px;">
+      <div style="flex:62; background:linear-gradient(135deg, #064e3b, #166534); display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:bold;">
+        62% Halal
+      </div>
+      <div style="width:2px; background:white;"></div>
+      <div style="flex:38; background:linear-gradient(135deg, #7f1d1d, #991b1b); display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:bold;">
+        38% Haram
+      </div>
+    </div>
+  </div>
+  <p style="font-size:13px; opacity:0.7; margin-top:8px;">Full-width split that animates open after vote. Much more dramatic than a tiny bar.</p>
+</div>
+
+<div class="section">
+  <h3>4. Geometric Islamic Patterns as Backgrounds</h3>
+  <div class="mockup">
+    <div class="mockup-header">Subtle cultural identity</div>
+    <div class="mockup-body" style="padding:24px; position:relative; overflow:hidden;">
+      <div style="position:absolute; inset:0; opacity:0.03; background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><polygon points=%2230,5 55,20 55,40 30,55 5,40 5,20%22 fill=%22none%22 stroke=%22white%22 stroke-width=%221%22/></svg>'); background-size: 60px 60px;"></div>
+      <div style="position:relative; z-index:1;">
+        <h4 style="margin:0;">Subtle hexagonal/arabesque SVG pattern at 3-5% opacity</h4>
+        <p style="opacity:0.6; margin-top:8px; font-size:13px;">Gives cultural identity without being heavy-handed. Used by modern Islamic fintech apps like Wahed Invest. Pattern only on hero sections or card backgrounds, not everywhere.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>5. Versus Layout for Comments</h3>
+  <div class="mockup">
+    <div class="mockup-header">Debate format</div>
+    <div class="mockup-body" style="padding:20px; display:grid; grid-template-columns:1fr auto 1fr; gap:16px;">
+      <div style="border-left:3px solid #4ade80; padding:12px; background:rgba(74,222,128,0.05); border-radius:0 8px 8px 0;">
+        <span style="font-size:11px; opacity:0.5;">HALAL SIDE</span>
+        <p style="font-size:13px; margin:6px 0 0;">It's a legitimate investment if you understand the asset...</p>
+        <p style="font-size:11px; opacity:0.4; margin-top:4px;">@ahmad_k</p>
+      </div>
+      <div style="display:flex; align-items:center; font-weight:bold; font-size:18px; opacity:0.3;">VS</div>
+      <div style="border-right:3px solid #f87171; padding:12px; background:rgba(248,113,113,0.05); border-radius:8px 0 0 8px; text-align:right;">
+        <span style="font-size:11px; opacity:0.5;">HARAM SIDE</span>
+        <p style="font-size:13px; margin:6px 0 0;">The speculative nature makes it closer to gambling...</p>
+        <p style="font-size:11px; opacity:0.4; margin-top:4px;">@fatima_r</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:13px; opacity:0.7; margin-top:8px;">Two-column debate view. Feels like a real structured debate, not just a comment section.</p>
+</div>
+
+<div class="section">
+  <h3>6. Animated Number Counter on Vote</h3>
+  <div class="mockup">
+    <div class="mockup-header">Satisfying micro-interaction</div>
+    <div class="mockup-body" style="text-align:center; padding:24px;">
+      <div style="font-size:48px; font-weight:900; background:linear-gradient(135deg, #4ade80, #22c55e); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">62%</div>
+      <p style="font-size:13px; opacity:0.5;">Numbers count up from 0 to final % with easing. Percentage dominates the screen for a moment, then shrinks to its position. Like a scoreboard reveal.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>7. Card Stacking Feed (Pinterest-esque)</h3>
+  <div class="mockup">
+    <div class="mockup-header">Masonry grid instead of linear list</div>
+    <div class="mockup-body" style="padding:16px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="background:#1a1a2e; padding:16px; border-radius:12px; border:1px solid #333;">
+        <h5 style="margin:0; font-size:14px;">Crypto Trading</h5>
+        <div style="height:4px; background:#333; border-radius:2px; margin-top:12px; overflow:hidden;">
+          <div style="width:62%; height:100%; background:#4ade80; border-radius:2px;"></div>
+        </div>
+        <p style="font-size:11px; opacity:0.5; margin-top:6px;">342 votes</p>
+      </div>
+      <div style="background:#1a1a2e; padding:16px; border-radius:12px; border:1px solid #333; margin-top:24px;">
+        <h5 style="margin:0; font-size:14px;">Lab-Grown Meat</h5>
+        <div style="height:4px; background:#333; border-radius:2px; margin-top:12px; overflow:hidden;">
+          <div style="width:45%; height:100%; background:#4ade80; border-radius:2px;"></div>
+        </div>
+        <p style="font-size:11px; opacity:0.5; margin-top:6px;">891 votes</p>
+      </div>
+      <div style="background:#1a1a2e; padding:16px; border-radius:12px; border:1px solid #333;">
+        <h5 style="margin:0; font-size:14px;">Music Streaming</h5>
+        <p style="font-size:11px; opacity:0.5; margin-top:6px;">New — 12 votes</p>
+      </div>
+      <div style="background:#1a1a2e; padding:16px; border-radius:12px; border:1px solid #333; margin-top:-12px;">
+        <h5 style="margin:0; font-size:14px;">Insurance</h5>
+        <p style="font-size:11px; opacity:0.5; margin-top:6px;">New — 5 votes</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:13px; opacity:0.7; margin-top:8px;">Visual variety. Different card heights based on content. Feels more like browsing than scrolling a list.</p>
+</div>
+
+<div class="section">
+  <h3>8. Glassmorphism Cards with Gradient Borders</h3>
+  <div class="mockup">
+    <div class="mockup-header">Premium feel</div>
+    <div class="mockup-body" style="padding:24px; background:linear-gradient(135deg, #0a0a1a, #1a1a2e);">
+      <div style="background:rgba(255,255,255,0.03); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:20px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:-1px; left:20%; right:20%; height:1px; background:linear-gradient(90deg, transparent, rgba(74,222,128,0.5), transparent);"></div>
+        <h4 style="margin:0 0 8px;">Is Crypto Day Trading Halal?</h4>
+        <p style="opacity:0.5; font-size:13px; margin:0;">Frosted glass effect with subtle green glow on top edge. Premium, modern, distinctive.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>9. Scholar Citation as Callout Cards</h3>
+  <div class="mockup">
+    <div class="mockup-header">Elevate citations</div>
+    <div class="mockup-body" style="padding:24px;">
+      <div style="background:linear-gradient(135deg, rgba(74,222,128,0.05), rgba(74,222,128,0.02)); border:1px solid rgba(74,222,128,0.15); border-radius:12px; padding:16px; position:relative;">
+        <div style="font-size:32px; position:absolute; top:8px; left:12px; opacity:0.1;">"</div>
+        <p style="font-size:14px; margin:0 0 8px; padding-left:24px;">Day trading crypto is permissible as long as you're trading actual assets...</p>
+        <div style="padding-left:24px; border-top:1px solid rgba(255,255,255,0.05); padding-top:8px; margin-top:8px;">
+          <p style="font-size:12px; opacity:0.6; margin:0;">📖 Sheikh Yusuf al-Qaradawi</p>
+          <p style="font-size:11px; opacity:0.4; margin:2px 0 0;">The Lawful and the Prohibited in Islam</p>
+        </div>
+      </div>
+      <p style="font-size:13px; opacity:0.7; margin-top:12px;">Scholar citations as distinct, quotation-style callouts — not just italic text. Gives them authority and visual weight.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>10. Emerald + Gold Accent Palette</h3>
+  <div class="mockup">
+    <div class="mockup-header">Color identity</div>
+    <div class="mockup-body" style="padding:24px;">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="width:80px; text-align:center;">
+          <div style="width:80px; height:60px; background:#0a0a0f; border-radius:8px; border:1px solid #333;"></div>
+          <p style="font-size:10px; margin-top:4px; opacity:0.5;">Background</p>
+        </div>
+        <div style="width:80px; text-align:center;">
+          <div style="width:80px; height:60px; background:#4ade80; border-radius:8px;"></div>
+          <p style="font-size:10px; margin-top:4px; opacity:0.5;">Halal Green</p>
+        </div>
+        <div style="width:80px; text-align:center;">
+          <div style="width:80px; height:60px; background:#f87171; border-radius:8px;"></div>
+          <p style="font-size:10px; margin-top:4px; opacity:0.5;">Haram Red</p>
+        </div>
+        <div style="width:80px; text-align:center;">
+          <div style="width:80px; height:60px; background:#d4a853; border-radius:8px;"></div>
+          <p style="font-size:10px; margin-top:4px; opacity:0.5;">Gold Accent</p>
+        </div>
+        <div style="width:80px; text-align:center;">
+          <div style="width:80px; height:60px; background:#1a1a2e; border-radius:8px; border:1px solid #333;"></div>
+          <p style="font-size:10px; margin-top:4px; opacity:0.5;">Card Surface</p>
+        </div>
+      </div>
+      <p style="font-size:13px; opacity:0.7; margin-top:16px;">Deep dark background + emerald green (halal) + warm red (haram) + gold accent for highlights and scholar citations. Gold brings warmth and Islamic cultural resonance without being on-the-nose.</p>
+    </div>
+  </div>
+</div>

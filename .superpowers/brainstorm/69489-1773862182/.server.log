@@ -1,0 +1,5 @@
+{"type":"server-started","port":60599,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:60599","screen_dir":"/Users/upneja/Projects/halalvote/.superpowers/brainstorm/69489-1773862182"}
+{"type":"screen-added","file":"/Users/upneja/Projects/halalvote/.superpowers/brainstorm/69489-1773862182/architecture.html"}
+{"type":"screen-added","file":"/Users/upneja/Projects/halalvote/.superpowers/brainstorm/69489-1773862182/pages-wireframe.html"}
+{"type":"screen-added","file":"/Users/upneja/Projects/halalvote/.superpowers/brainstorm/69489-1773862182/ux-inspiration.html"}
+{"type":"server-stopped","reason":"idle timeout"}

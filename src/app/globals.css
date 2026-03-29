@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ============================================================
+   HalalVote Design System
+   Palette: Emerald (#059669) + Gold (#D4A843) on Neutral-950
+   ============================================================ */
+
+:root {
+  --gold: #D4A843;
+  --gold-muted: #B8922F;
+  --gold-subtle: rgba(212, 168, 67, 0.12);
+  --emerald: #059669;
+  --emerald-glow: rgba(5, 150, 105, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-gold: rgba(212, 168, 67, 0.2);
+}
+
+/* ============================================================
+   Islamic 8-Point Star Geometric Background Pattern
+   Opacity kept at 0.03 — ambient texture, not distracting
+   ============================================================ */
+.geometric-bg {
+  position: relative;
+}
+
+.geometric-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23D4A843' stroke-width='0.6'%3E%3Cpolygon points='40,8 46.1,17.2 56.6,14.7 53.5,25 62,31.8 51.8,35.2 51.8,44.8 62,48.2 53.5,55 56.6,65.3 46.1,62.8 40,72 33.9,62.8 23.4,65.3 26.5,55 18,48.2 28.2,44.8 28.2,35.2 18,31.8 26.5,25 23.4,14.7 33.9,17.2'/%3E%3Ccircle cx='40' cy='40' r='8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geometric-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   Glass Card Base
+   ============================================================ */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card-gold {
+  background: var(--gold-subtle);
+  border: 1px solid var(--glass-border-gold);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ============================================================
+   Gold Gradient Text
+   ============================================================ */
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #E8C56A 0%, #D4A843 50%, #B8922F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================================
+   Donut Chart for Vote Results
+   ============================================================ */
+.donut-chart {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.donut-chart::after {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border-radius: 50%;
+  background: #0a0a0a;
+}
+
+/* ============================================================
+   Smooth Transitions
+   ============================================================ */
+* {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Override for elements that should not transition */
+[data-no-transition] {
+  transition: none !important;
+}
+
+/* ============================================================
+   Focus Ring System — Keyboard Accessibility
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Scrollbar Styling
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 168, 67, 0.3);
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+.heading-display {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heading-section {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* ============================================================
+   Vote Button Hover Glow
+   ============================================================ */
+.btn-halal {
+  background: linear-gradient(135deg, #065f46, #047857);
+  border: 1px solid rgba(5, 150, 105, 0.4);
+  box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+}
+
+.btn-halal:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  box-shadow: 0 0 20px rgba(5, 150, 105, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-haram {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+}
+
+.btn-haram:hover {
+  background: linear-gradient(135deg, #991b1b, #b91c1c);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   Topic Card Hover
+   ============================================================ */
+.topic-card {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.topic-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 168, 67, 0.25) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(212, 168, 67, 0.1);
+}
+
+/* ============================================================
+   Scholar Citation Callout
+   ============================================================ */
+.scholar-citation {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.scholar-citation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  border-radius: 1px;
+}
+
+/* ============================================================
+   Versus Layout for Comments
+   ============================================================ */
+.debate-col-halal {
+  border-top: 2px solid rgba(5, 150, 105, 0.5);
+  background: linear-gradient(180deg, rgba(5, 150, 105, 0.05) 0%, transparent 60px);
+}
+
+.debate-col-haram {
+  border-top: 2px solid rgba(239, 68, 68, 0.5);
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, transparent 60px);
+}
+
+/* ============================================================
+   Nav Glassmorphism
+   ============================================================ */
+.nav-glass {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ============================================================
+   Input Focus Glow
+   ============================================================ */
+.input-field:focus {
+  border-color: rgba(212, 168, 67, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.08);
+  outline: none;
+}
+
+/* ============================================================
+   Auth Card
+   ============================================================ */
+.auth-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+}

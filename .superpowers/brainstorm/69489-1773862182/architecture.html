@@ -1,0 +1,110 @@
+<h2>HalalVote — Architecture Overview</h2>
+<p class="subtitle">Next.js + Supabase + Claude API</p>
+
+<div class="section">
+  <h3>System Architecture</h3>
+  <div class="mockup">
+    <div class="mockup-header">High-Level Architecture</div>
+    <div class="mockup-body" style="font-family: monospace; font-size: 13px; line-height: 1.6; padding: 24px;">
+      <pre style="margin:0; white-space: pre;">
+┌─────────────────────────────────────────────────┐
+│                   FRONTEND                       │
+│              Next.js App Router                  │
+│    ┌──────────┬──────────┬──────────────┐       │
+│    │  Topics  │  Voting  │   Comments   │       │
+│    │   Feed   │   UI     │   Thread     │       │
+│    └──────────┴──────────┴──────────────┘       │
+│    ┌──────────┬──────────┬──────────────┐       │
+│    │  Submit  │  Auth    │   Profile    │       │
+│    │  Topic   │  Pages   │   Page      │       │
+│    └──────────┴──────────┴──────────────┘       │
+└────────────────────┬────────────────────────────┘
+                     │
+          ┌──────────┴──────────┐
+          │   Next.js API Routes │
+          │   /api/topics        │
+          │   /api/votes         │
+          │   /api/comments      │
+          │   /api/tags (AI)     │
+          └──────────┬──────────┘
+                     │
+     ┌───────────────┼───────────────┐
+     │               │               │
+┌────┴─────┐  ┌─────┴─────┐  ┌─────┴─────┐
+│ Supabase │  │ Supabase  │  │  Claude   │
+│ Postgres │  │   Auth    │  │   API     │
+│          │  │           │  │  (tags)   │
+│ • topics │  │ • email   │  │           │
+│ • votes  │  │ • OAuth   │  │ auto-tag  │
+│ • comments│ │ • sessions│  │ on submit │
+│ • tags   │  │           │  │           │
+└──────────┘  └───────────┘  └───────────┘
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Data Model</h3>
+  <div class="mockup">
+    <div class="mockup-header">Core Tables</div>
+    <div class="mockup-body" style="font-family: monospace; font-size: 12px; line-height: 1.5; padding: 24px;">
+      <pre style="margin:0; white-space: pre;">
+┌──────────────────┐     ┌──────────────────┐
+│     profiles     │     │     topics       │
+├──────────────────┤     ├──────────────────┤
+│ id (uuid, PK)   │◄────│ author_id (FK)   │
+│ username         │     │ id (uuid, PK)    │
+│ display_name     │     │ title            │
+│ avatar_url       │     │ description      │
+│ created_at       │     │ halal_count      │
+└──────────────────┘     │ haram_count      │
+         │               │ created_at       │
+         │               └────────┬─────────┘
+         │                        │
+         │               ┌────────┴─────────┐
+         │               │                  │
+┌────────┴─────────┐  ┌──┴───────────┐  ┌──┴──────────────┐
+│     votes        │  │   comments   │  │   topic_tags    │
+├──────────────────┤  ├──────────────┤  ├─────────────────┤
+│ id (PK)          │  │ id (PK)      │  │ topic_id (FK)   │
+│ topic_id (FK)    │  │ topic_id (FK)│  │ tag_id (FK)     │
+│ user_id (FK)     │  │ user_id (FK) │  └─────────────────┘
+│ vote (halal/     │  │ body         │         │
+│        haram)    │  │ position     │  ┌──────┴──────────┐
+│ created_at       │  │  (halal/     │  │     tags        │
+│                  │  │   haram)     │  ├─────────────────┤
+│ UNIQUE(topic,    │  │ scholar_cite │  │ id (PK)         │
+│        user)     │  │ created_at   │  │ name            │
+└──────────────────┘  └──────────────┘  │ slug            │
+                                        └─────────────────┘
+      </pre>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Key Flows</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+    <div class="mockup">
+      <div class="mockup-header">Submit Topic</div>
+      <div class="mockup-body" style="font-size: 13px; padding: 16px;">
+        <p>1. User writes title + description</p>
+        <p>2. Submit → API route</p>
+        <p>3. Claude API generates 2-4 tags</p>
+        <p>4. Topic + tags saved to DB</p>
+        <p>5. Appears in feed immediately</p>
+      </div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">Vote + Comment</div>
+      <div class="mockup-body" style="font-size: 13px; padding: 16px;">
+        <p>1. User sees topic (no results yet)</p>
+        <p>2. Taps Halal or Haram</p>
+        <p>3. Vote saved, % results revealed</p>
+        <p>4. Comment section unlocks</p>
+        <p>5. Can add comment + optional scholar cite</p>
+      </div>
+    </div>
+  </div>
+</div>

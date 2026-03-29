@@ -1,0 +1,152 @@
+<h2>HalalVote — Page Wireframes</h2>
+<p class="subtitle">Core pages for MVP</p>
+
+<div class="section">
+  <h3>1. Home / Feed</h3>
+  <div class="mockup">
+    <div class="mockup-header">halalvote.com</div>
+    <div class="mockup-body" style="padding: 0;">
+      <div class="mock-nav" style="display:flex; justify-content:space-between; align-items:center; padding: 12px 20px; border-bottom: 1px solid #333;">
+        <span style="font-weight:bold; font-size:18px;">HalalVote</span>
+        <div style="display:flex; gap:16px; align-items:center;">
+          <span style="opacity:0.7;">Trending</span>
+          <span style="opacity:0.7;">New</span>
+          <span style="opacity:0.7;">Tags</span>
+          <button class="mock-button" style="font-size:12px; padding:6px 12px;">+ Submit</button>
+          <span style="opacity:0.7;">Profile ▾</span>
+        </div>
+      </div>
+
+      <div style="padding: 20px; display:flex; gap:20px;">
+        <!-- Sidebar: Tags -->
+        <div style="width:200px; flex-shrink:0;">
+          <div style="font-size:12px; text-transform:uppercase; opacity:0.5; margin-bottom:8px;">Popular Tags</div>
+          <div style="display:flex; flex-wrap:wrap; gap:6px;">
+            <span style="background:#2a2a3a; padding:4px 10px; border-radius:12px; font-size:12px;">🍖 Food</span>
+            <span style="background:#2a2a3a; padding:4px 10px; border-radius:12px; font-size:12px;">💰 Finance</span>
+            <span style="background:#2a2a3a; padding:4px 10px; border-radius:12px; font-size:12px;">💻 Tech</span>
+            <span style="background:#2a2a3a; padding:4px 10px; border-radius:12px; font-size:12px;">👗 Fashion</span>
+            <span style="background:#2a2a3a; padding:4px 10px; border-radius:12px; font-size:12px;">🎮 Gaming</span>
+          </div>
+          <div style="margin-top:16px; font-size:12px; text-transform:uppercase; opacity:0.5; margin-bottom:8px;">Trending Now 🔥</div>
+          <div style="font-size:13px; opacity:0.8; line-height:1.8;">
+            1. Crypto Trading<br>
+            2. Lab-Grown Meat<br>
+            3. Music Streaming
+          </div>
+        </div>
+
+        <!-- Main Feed -->
+        <div style="flex:1;">
+          <!-- Topic Card 1 -->
+          <div style="background:#1a1a2e; border:1px solid #333; border-radius:12px; padding:20px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+              <div>
+                <h4 style="margin:0 0 6px 0;">Is Crypto Day Trading Halal?</h4>
+                <p style="margin:0; opacity:0.6; font-size:13px;">Active speculation vs legitimate investment...</p>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <span style="background:#2a2a3a; padding:2px 8px; border-radius:8px; font-size:11px;">Finance</span>
+                <span style="background:#2a2a3a; padding:2px 8px; border-radius:8px; font-size:11px;">Crypto</span>
+              </div>
+            </div>
+            <div style="margin-top:16px; display:flex; gap:12px; align-items:center;">
+              <div style="flex:1; background:#333; border-radius:8px; height:8px; overflow:hidden;">
+                <div style="width:62%; height:100%; background: linear-gradient(90deg, #4ade80, #22c55e); border-radius:8px;"></div>
+              </div>
+              <span style="font-size:12px; opacity:0.7;">62% Halal · 342 votes · 28 comments</span>
+            </div>
+          </div>
+
+          <!-- Topic Card 2 -->
+          <div style="background:#1a1a2e; border:1px solid #333; border-radius:12px; padding:20px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+              <div>
+                <h4 style="margin:0 0 6px 0;">Is Lab-Grown Meat Halal?</h4>
+                <p style="margin:0; opacity:0.6; font-size:13px;">Cultured from animal cells without slaughter...</p>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <span style="background:#2a2a3a; padding:2px 8px; border-radius:8px; font-size:11px;">Food</span>
+                <span style="background:#2a2a3a; padding:2px 8px; border-radius:8px; font-size:11px;">Science</span>
+              </div>
+            </div>
+            <div style="margin-top:16px; display:flex; gap:12px; align-items:center;">
+              <div style="flex:1; background:#333; border-radius:8px; height:8px; overflow:hidden;">
+                <div style="width:45%; height:100%; background: linear-gradient(90deg, #4ade80, #22c55e); border-radius:8px;"></div>
+              </div>
+              <span style="font-size:12px; opacity:0.7;">45% Halal · 891 votes · 67 comments</span>
+            </div>
+          </div>
+
+          <!-- Topic Card 3 - Unvoted -->
+          <div style="background:#1a1a2e; border:1px solid #444; border-radius:12px; padding:20px; margin-bottom:16px;">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+              <div>
+                <h4 style="margin:0 0 6px 0;">Is Listening to Music While Working Halal?</h4>
+                <p style="margin:0; opacity:0.6; font-size:13px;">Background music for productivity...</p>
+              </div>
+              <div style="display:flex; gap:6px;">
+                <span style="background:#2a2a3a; padding:2px 8px; border-radius:8px; font-size:11px;">Lifestyle</span>
+              </div>
+            </div>
+            <div style="margin-top:16px; display:flex; gap:12px;">
+              <button style="flex:1; padding:10px; background:#166534; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">✓ Halal</button>
+              <button style="flex:1; padding:10px; background:#991b1b; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">✗ Haram</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>2. Topic Detail (after voting)</h3>
+  <div class="mockup">
+    <div class="mockup-header">halalvote.com/topic/crypto-day-trading</div>
+    <div class="mockup-body" style="padding: 24px;">
+      <h3 style="margin:0 0 8px 0;">Is Crypto Day Trading Halal?</h3>
+      <p style="opacity:0.6; font-size:14px; margin:0 0 20px 0;">Active speculation on cryptocurrency price movements for short-term profit. Does the speculative nature make it closer to gambling (maysir)?</p>
+
+      <div style="display:flex; gap:6px; margin-bottom:20px;">
+        <span style="background:#2a2a3a; padding:3px 10px; border-radius:8px; font-size:12px;">Finance</span>
+        <span style="background:#2a2a3a; padding:3px 10px; border-radius:8px; font-size:12px;">Crypto</span>
+        <span style="background:#2a2a3a; padding:3px 10px; border-radius:8px; font-size:12px;">Investment</span>
+      </div>
+
+      <!-- Vote Results -->
+      <div style="background:#1a1a2e; border-radius:12px; padding:20px; margin-bottom:24px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:#4ade80; font-weight:bold;">62% Halal</span>
+          <span style="color:#f87171; font-weight:bold;">38% Haram</span>
+        </div>
+        <div style="background:#333; border-radius:8px; height:12px; overflow:hidden;">
+          <div style="width:62%; height:100%; background: linear-gradient(90deg, #4ade80, #22c55e); border-radius:8px;"></div>
+        </div>
+        <div style="text-align:center; margin-top:8px; font-size:13px; opacity:0.5;">342 votes · You voted Halal ✓</div>
+      </div>
+
+      <!-- Comments -->
+      <h4 style="margin:0 0 16px 0;">Discussion (28 comments)</h4>
+
+      <!-- Halal comment -->
+      <div style="border-left:3px solid #4ade80; padding:12px 16px; background:#1a1a2e; border-radius:0 8px 8px 0; margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-weight:bold; font-size:13px;">@ahmad_k</span>
+          <span style="background:#166534; padding:2px 8px; border-radius:6px; font-size:11px;">Voted Halal</span>
+        </div>
+        <p style="margin:0 0 8px 0; font-size:14px;">Day trading crypto is permissible as long as you're trading actual assets and not using excessive leverage (which resembles riba).</p>
+        <div style="font-size:12px; opacity:0.5; font-style:italic;">📖 Sheikh Yusuf al-Qaradawi — The Lawful and the Prohibited in Islam</div>
+      </div>
+
+      <!-- Haram comment -->
+      <div style="border-left:3px solid #f87171; padding:12px 16px; background:#1a1a2e; border-radius:0 8px 8px 0; margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <span style="font-weight:bold; font-size:13px;">@fatima_r</span>
+          <span style="background:#991b1b; padding:2px 8px; border-radius:6px; font-size:11px;">Voted Haram</span>
+        </div>
+        <p style="margin:0; font-size:14px;">The speculative nature of day trading makes it more akin to gambling (maysir). You're not investing in value — you're betting on price movements.</p>
+      </div>
+    </div>
+  </div>
+</div>
