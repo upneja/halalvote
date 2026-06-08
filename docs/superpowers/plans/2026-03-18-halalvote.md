@@ -116,7 +116,7 @@ npm install @supabase/supabase-js @supabase/ssr @anthropic-ai/sdk
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-ANTHROPIC_API_KEY=your_anthropic_api_key
+Set `ANTHROPIC_API_KEY` in `.env.local` for local Claude API access.
 ```
 
 - [ ] **Step 4: Add `.env.local` to `.gitignore`**
