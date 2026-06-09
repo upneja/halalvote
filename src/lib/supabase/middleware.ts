@@ -1,12 +1,50 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
+const MAINTENANCE_HTML = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Halal Vote — back soon</title>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: #0a0a0a; color: #fff; font-family: Georgia, "Times New Roman", serif;
+    text-align: center; padding: 2rem; }
+  h1 { font-size: 2rem; font-weight: 600; margin: 0 0 0.75rem; }
+  p { color: #a3a3a3; font-size: 1rem; margin: 0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div>
+  <h1>Halal Vote is coming back soon</h1>
+  <p>We&rsquo;re doing a bit of maintenance. Check back shortly.</p>
+</div>
+</body>
+</html>`;
+
 export async function updateSession(request: NextRequest) {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  // Fail soft when Supabase env vars are missing (e.g. a deploy without
+  // configured secrets): createServerClient throws on undefined values,
+  // which would otherwise 500 every route the middleware matches.
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return new NextResponse(MAINTENANCE_HTML, {
+      status: 503,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "retry-after": "3600",
+      },
+    });
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         getAll() {
