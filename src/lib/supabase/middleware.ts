@@ -42,6 +42,7 @@ export async function updateSession(request: NextRequest) {
 
   let supabaseResponse = NextResponse.next({ request });
 
+  try {
   const supabase = createServerClient(
     supabaseUrl,
     supabaseAnonKey,
@@ -96,4 +97,16 @@ export async function updateSession(request: NextRequest) {
   }
 
   return supabaseResponse;
+  } catch {
+    // Defined-but-invalid env (placeholder URL, dead project, network failure
+    // inside auth.getUser) must degrade the same way as missing env: the
+    // maintenance page, never an edge 500.
+    return new NextResponse(MAINTENANCE_HTML, {
+      status: 503,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "retry-after": "3600",
+      },
+    });
+  }
 }
